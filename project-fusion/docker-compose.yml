@@ -1,0 +1,14 @@
+services:
+  backend:
+    build: ./backend
+    container_name: fusion-backend
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend
+    container_name: fusion-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
