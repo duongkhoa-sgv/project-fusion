@@ -12,7 +12,7 @@ class UserBase(BaseModel):
     is_active: Optional[bool] = True
 
 
-# region 1. Schema tạo user (Create User)
+# region 1. Schema tạo user
 # Dùng cho: POST /users
 class UserCreate(UserBase):
     password: str
@@ -21,7 +21,7 @@ class UserCreate(UserBase):
 # endregion
 
 
-# region 2. Schema cập nhật user (Update User)
+# region 2. Schema cập nhật user
 # Dùng cho: PUT /users/{id}
 class UserUpdate(BaseModel):
     full_name: Optional[str] = None
@@ -37,7 +37,7 @@ class UserChangePassword(BaseModel):
 # endregion
 
 
-# region 4. Schema response user (User Response)
+# region 4. Schema response user
 # Dùng cho: tất cả API trả user
 class UserResponse(UserBase):
     id: int
@@ -49,3 +49,4 @@ class UserResponse(UserBase):
     class Config:
         orm_mode = True
 # endregion
+// test commit by me
